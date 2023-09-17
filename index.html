@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>下拉菜单实例|菜鸟教程(runoob.com)</title>
+<title>导航网站</title>
 <meta charset="utf-8">
 <style>
   /* 基本样式保持不变 */
   ul {
     list-style-type:none;
-    margin:0;
-    padding:0;
+    Margin:0;
+    Padding:0;
     overflow:hidden;
-    background-color:#333;
+    background-color:#fff;
+    display: block;
+    width: 100%;
   }
   
   li {
@@ -19,14 +21,14 @@
   
   li a, .dropbtn {
     display:inline-block;
-    color:white;
+    color:black;
     text-align:center;
     padding:14px 16px;
     text-decoration:none;
   }
   
   li a:hover, .dropdown:hover, .dropbtn {
-    background-color:#111;
+    background-color:#fff;
   }
   
   .dropdown {
@@ -72,15 +74,16 @@
 
   .search-container input[type=text] {
     flex: 1; /* 自动填充剩余空间 */
-    padding: 10px;
+    padding: 25px;
+    width: 500px;
     border: none;
-    border-radius: 5px;
+    border-radius: 15px;
     outline: none;
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .search-container select {
-    width: 150px;
+    width: 75px;
     padding: 5px;
     font-size: 16px;
   }
@@ -104,19 +107,19 @@
 <script>
     window.onload = function() {
         var mobileWallpapers = [
-            "https://dhwzgh.github.io/sjbizhi/1.JPG",
-            "https://dhwzgh.github.io/sjbizhi/2.JPG",
-            "https://dhwzgh.github.io/sjbizhi/3.JPG",
-            "https://dhwzgh.github.io/sjbizhi/4.JPG",
+            "https://ipazxnz.github.io/sjbizhi/1.JPG",
+            "https://ipazxnz.github.io/sjbizhi/2.JPG",
+            "https://ipazxnz.github.io/sjbizhi/3.JPG",
+            "https://ipazxnz.github.io/sjbizhi/4.JPG",
             // 添加更多手机壁纸链接...
         ];
 
         var desktopWallpapers = [
-            "https://dhwzgh.github.io/bizhi/1.jpg",
-            "https://dhwzgh.github.io/bizhi/2.jpg",
-            "https://dhwzgh.github.io/bizhi/3.jpg",
-            "https://dhwzgh.github.io/bizhi/4.jpg",
-            "https://dhwzgh.github.io/bizhi/5.jpg",
+            "https://ipazxnz.github.io/bizhi/1.jpg",
+            "https://ipazxnz.github.io/bizhi/2.jpg",
+            "https://ipazxnz.github.io/bizhi/3.jpg",
+            "https://ipazxnz.github.io/bizhi/4.jpg",
+            "https://ipazxnz.github.io/bizhi/5.jpg",
             // 添加更多电脑壁纸链接...
         ];
 
@@ -140,13 +143,15 @@
 
 <ul>
   <li><a class="active" href="#home">主页</a></li>
-  <li><a href="#news">新闻</a></li>
+  <li><a href="https://www.xn--vnu.eu.org/">博客</a></li>
+  <li><a href="https://ipazxnz.github.io">iOS软件在线安装</a></li>
   <div class="dropdown">
-    <a href="#" class="dropbtn">下拉菜单</a>
+    <a href="#" class="dropbtn">工具</a>
     <div class="dropdown-content">
-      <a href="#">链接 1</a>
-      <a href="#">链接 2</a>
-      <a href="#">链接 3</a>
+      <a href="https://dypd.eu.org/dlj">短链接</a>
+      <a href="gpt999.eu.org">GPT</a>
+      <a href="https://github.com">GitHub</a>
+      <a href="https://www.cloudflare.com/zh-cn/">Cloudflare</a>
     </div>
   </div>
 </ul>
