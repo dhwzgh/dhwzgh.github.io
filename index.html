@@ -65,12 +65,23 @@
     text-align: center;
   }
 
+  .search-container {
+    display: flex; /* 使用 Flexbox 布局 */
+    align-items: center; /* 垂直居中对齐 */
+  }
+
   .search-container input[type=text] {
-    width: 300px;
+    flex: 1; /* 自动填充剩余空间 */
     padding: 10px;
     border: none;
     border-radius: 5px;
     outline: none;
+    font-size: 16px;
+  }
+
+  .search-container select {
+    width: 150px;
+    padding: 5px;
     font-size: 16px;
   }
 
@@ -87,6 +98,43 @@
     background-color: #111;
   }
 </style>
+</head>
+<body>
+
+<script>
+    window.onload = function() {
+        var mobileWallpapers = [
+            "https://dhwzgh.github.io/sjbizhi/1.JPG",
+            "https://dhwzgh.github.io/sjbizhi/2.JPG",
+            "https://dhwzgh.github.io/sjbizhi/3.JPG",
+            "https://dhwzgh.github.io/sjbizhi/4.JPG",
+            // 添加更多手机壁纸链接...
+        ];
+
+        var desktopWallpapers = [
+            "https://dhwzgh.github.io/bizhi/1.jpg",
+            "https://dhwzgh.github.io/bizhi/2.jpg",
+            "https://dhwzgh.github.io/bizhi/3.jpg",
+            "https://dhwzgh.github.io/bizhi/4.jpg",
+            "https://dhwzgh.github.io/bizhi/5.jpg",
+            // 添加更多电脑壁纸链接...
+        ];
+
+        var isMobile = (/Mobi|Android/i.test(navigator.userAgent));
+
+        var selectedWallpaper;
+
+        if (isMobile) {
+            var randomMobileIndex = Math.floor(Math.random() * mobileWallpapers.length);
+            selectedWallpaper = mobileWallpapers[randomMobileIndex];
+        } else {
+            var randomDesktopIndex = Math.floor(Math.random() * desktopWallpapers.length);
+            selectedWallpaper = desktopWallpapers[randomDesktopIndex];
+        }
+
+        document.body.style.backgroundImage = "url('" + selectedWallpaper + "')";
+    };
+</script>
 </head>
 <body>
 
@@ -108,6 +156,11 @@
   <div class="search-container">
     <form id="searchForm" method="GET">
       <input type="text" id="searchInput" name="q" placeholder="搜索...">
+      <select id="searchEngine" name="searchEngine">
+        <option value="google">Google</option>
+        <option value="bing">Bing</option>
+        <option value="baidu">Baidu</option>
+      </select>
       <input type="submit" value="搜索">
     </form>
   </div>
@@ -117,7 +170,25 @@
   document.getElementById('searchForm').addEventListener('submit', function (e) {
     e.preventDefault();
     const searchInputValue = document.getElementById('searchInput').value;
-    const searchURL = 'https://www.google.com/search?q=' + encodeURIComponent(searchInputValue);
+    const searchEngine = document.getElementById('searchEngine').value;
+
+    let searchURL = '';
+
+    // 根据用户选择的搜索引擎构建搜索URL
+    switch (searchEngine) {
+      case 'google':
+        searchURL = 'https://www.google.com/search?q=' + encodeURIComponent(searchInputValue);
+        break;
+      case 'bing':
+        searchURL = 'https://www.bing.com/search?q=' + encodeURIComponent(searchInputValue);
+        break;
+      case 'baidu':
+        searchURL = 'https://www.baidu.com/s?wd=' + encodeURIComponent(searchInputValue);
+        break;
+      default:
+        searchURL = 'https://www.google.com/search?q=' + encodeURIComponent(searchInputValue);
+    }
+
     window.open(searchURL, '_blank'); // 在新窗口或新标签页中打开搜索结果
   });
 </script>
