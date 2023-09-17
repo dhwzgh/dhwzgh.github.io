@@ -117,8 +117,8 @@
   document.getElementById('searchForm').addEventListener('submit', function (e) {
     e.preventDefault();
     const searchInputValue = document.getElementById('searchInput').value;
-    const searchURL = 'search_result.html?q=' + encodeURIComponent(searchInputValue);
-    window.open(searchURL, '_blank'); // 在新标签页中打开搜索结果页面
+    const searchURL = 'https://www.google.com/search?q=' + encodeURIComponent(searchInputValue);
+    window.open(searchURL, '_blank'); // 在新窗口或新标签页中打开搜索结果
   });
 </script>
 
