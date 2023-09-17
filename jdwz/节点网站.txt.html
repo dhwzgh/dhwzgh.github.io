@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>节点</title>
+  <meta charset="utf-8">
+  <script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+</head>
+<body>
+  <h1>复制链接或者对应软件扫码</h1>
+  <h2>小火箭节点</h1>
+  <p>链接：https://cf1.zhoumo.eu.org/custom/clash/mingzi/shij/cffd/cffdsr08.yaml</p>
+  <div id="qrcodeTable"></div>
+  <h2>电脑端clash</h1>
+  <p>链接暂无</p>
+  <div id="qrcodeCanvas"></div>
+
+  <script>
+    jQuery('#qrcodeTable').qrcode({
+      render	: "table",
+      text	: "https://cf1.zhoumo.eu.org/custom/clash/mingzi/shij/cffd/cffdsr08.yaml"
+    });	
+    jQuery('#qrcodeCanvas').qrcode({
+      text	: "暂无"
+    });
+  </script>
+</body>
+</html>
