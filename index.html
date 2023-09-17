@@ -1,73 +1,128 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>下拉菜单实例|菜鸟教程(runoob.com)</title>
 <meta charset="utf-8">
-<title>iOS软件在线安装</title>
 <style>
-    h1 {
-        text-align: center;
-        font-weight: bold;
-    }
-    
-    .rounded-box {
-        border: 2px solid #000;
-        border-radius: 10px;
-        padding: 10px;
-        display: inline-block;
-        margin: 10px;
-        background-color: #FFFFE0;
-        color: #FFFFFF;
-    }
+  /* 基本样式保持不变 */
 
-    body {
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
+  ul {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    background-color:#333;
+  }
+  
+  li {
+    float:left;
+  }
+  
+  li a, .dropbtn {
+    display:inline-block;
+    color:white;
+    text-align:center;
+    padding:14px 16px;
+    text-decoration:none;
+  }
+  
+  li a:hover, .dropdown:hover, .dropbtn {
+    background-color:#111;
+  }
+  
+  .dropdown {
+    display:inline-block;
+  }
+  
+  .dropdown-content {
+    display:none;
+    position:absolute;
+    background-color:#f9f9f9;
+    min-width:160px;
+    box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+  
+  .dropdown-content a {
+    color:black;
+    padding:12px 16px;
+    text-decoration:none;
+    display:block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display:block;
+  }
+
+  /* 新增样式 */
+
+  .center-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .search-container input[type=text] {
+    width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+  }
+
+  .search-container input[type=submit] {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .search-container input[type=submit]:hover {
+    background-color: #111;
+  }
 </style>
-<script>
-    window.onload = function() {
-        var mobileWallpapers = [
-            "https://ipazxnz.github.io/sjbizhi/1.JPG",
-            "https://ipazxnz.github.io/sjbizhi/2.JPG",
-            "https://ipazxnz.github.io/sjbizhi/3.JPG",
-            "https://ipazxnz.github.io/sjbizhi/4.JPG",
-            // 添加更多手机壁纸链接...
-        ];
-
-        var desktopWallpapers = [
-            "https://ipazxnz.github.io/bizhi/1.jpg",
-            "https://ipazxnz.github.io/bizhi/2.jpg",
-            "https://ipazxnz.github.io/bizhi/3.jpg",
-            "https://ipazxnz.github.io/bizhi/4.jpg",
-            "https://ipazxnz.github.io/bizhi/5.jpg",
-            // 添加更多电脑壁纸链接...
-        ];
-
-        var isMobile = (/Mobi|Android/i.test(navigator.userAgent));
-
-        var selectedWallpaper;
-
-        if (isMobile) {
-            var randomMobileIndex = Math.floor(Math.random() * mobileWallpapers.length);
-            selectedWallpaper = mobileWallpapers[randomMobileIndex];
-        } else {
-            var randomDesktopIndex = Math.floor(Math.random() * desktopWallpapers.length);
-            selectedWallpaper = desktopWallpapers[randomDesktopIndex];
-        }
-
-        document.body.style.backgroundImage = "url('" + selectedWallpaper + "')";
-    };
-</script>
 </head>
 <body>
-    <h1>iOS软件在线安装</h1>
-    
-    <h2 class="rounded-box"><a href="https://tiktok.zhoumo.eu.org/index.html">tiktok</a></h2>
-    
-    <h2 class="rounded-box"><a href="https://ipazxnz.github.io/jmaz">jm</a></h2>
-    
-    <h2 class="rounded-box"><a href="https://www.xn--vnu.eu.org/article/b8329172-9fa4-48e2-93cd-53e68a197537">IOS-IPA信任教程</a></h2>
-    
-    <h2 class="rounded-box"><a href="pageC.html">其他</a></h2>
+
+<ul>
+  <li><a class="active" href="#home">主页</a></li>
+  <li><a href="#news">新闻</a></li>
+  <div class="dropdown">
+    <a href="#" class="dropbtn">下拉菜单</a>
+    <div class="dropdown-content">
+      <a href="#">链接 1</a>
+      <a href="#">链接 2</a>
+      <a href="#">链接 3</a>
+    </div>
+  </div>
+</ul>
+
+<!-- 添加搜索表单 -->
+<div class="center-container">
+  <div class="search-container">
+    <form id="searchForm" method="GET">
+      <input type="text" id="searchInput" name="q" placeholder="搜索...">
+      <input type="submit" value="搜索">
+    </form>
+  </div>
+</div>
+
+<script>
+  document.getElementById('searchForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const searchInputValue = document.getElementById('searchInput').value;
+    const searchURL = 'search_result.html?q=' + encodeURIComponent(searchInputValue);
+    window.location.href = searchURL;
+  });
+</script>
+
 </body>
 </html>
