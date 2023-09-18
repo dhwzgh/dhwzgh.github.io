@@ -8,9 +8,9 @@
             var password = prompt("请输入密码");
             if (password !== "123123") {
                 alert("密码错误");
-                window.location.href = "https://www.baidu.com"; // 输入错误时跳转到网站A
+                window.location.href = "https://dhwzgh.github.io/tz/nqr"; // 输入错误时跳转到网站A
             } else {
-                window.location.href = "https://www.gpt999.eu.org/"; // 输入正确时跳转到网站B
+                window.location.href = "https://dhwzgh.github.io/fl/"; // 输入正确时跳转到网站B
             }
         }
     </script>
