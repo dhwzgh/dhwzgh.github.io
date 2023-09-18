@@ -2,9 +2,25 @@
 <html>
 <head>
 <meta charset="utf-8">
-	<title>年轻人你的想法很危险</title>
+    <title>使用JavaScript动态创建HTML元素并调用图片</title>
 </head>
 <body>
-	<img src="images/1.jpg" alt="图片描述">
+    <div id="myDiv">
+        <h1></h1>
+    </div>
+
+    <script>
+        // 创建一个新的图片元素
+        var image = document.createElement("img");
+        
+        // 设置图片的路径
+        image.src = "https://dhwzgh.github.io/ta/nqr/1.jpg";
+        
+        // 设置图片的描述
+        image.alt = "这是一个动态创建的图片";
+        
+        // 将图片元素添加到页面中的div元素中
+        document.getElementById("myDiv").appendChild(image);
+    </script>
 </body>
 </html>
