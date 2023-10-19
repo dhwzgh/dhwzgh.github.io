@@ -9,17 +9,17 @@
             justify-content: space-between;
         }
         .account {
-            flex: 0 0 calc(35% - 5px); /* 调整此值以控制每个账号部分的宽度，并考虑到外边距 */
-            border: 3px solid #ccc; /* 添加边框 */
-            padding: 10px; /* 添加内边距 */
-            text-align: center; /* 水平居中对齐 */
-            margin: 30px; /* 设置外边距为5px */
+            flex: 0 0 calc(35% - 5px);
+            border: 3px solid #ccc;
+            padding: 10px;
+            text-align: center;
+            margin: 30px;
         }
         .copy-button {
-            font-size: 25px; /* 调整字体大小 */
+            font-size: 25px;
         }
         h1 {
-            text-align: center; /* 水平居中对齐标题文本 */
+            text-align: center;
         }
     </style>
 </head>
@@ -29,46 +29,42 @@
     <div class="account-container">
         <div class="account">
             <h2>账号1</h2>
-            <p>小火箭账号：<span class="rocketUsername">Account 1 Username</span></p>
-            <p>小火箭密码：<span class="rocketPassword">Account 1 Password</span></p>
-            <button class="copy-button" onclick="copyToClipboard('account1', 'username')">复制账号</button>
-            <button class="copy-button" onclick="copyToClipboard('account1', 'password')">复制密码</button>
+            <p>小火箭账号：<span class="rocketUsername" data-clipboard-text="Account 1 Username">Account 1 Username</span></p>
+            <p>小火箭密码：<span class="rocketPassword" data-clipboard-text="Account 1 Password">Account 1 Password</span></p>
+            <button class="copy-button" data-clipboard-action="copy" data-clipboard-target=".rocketUsername">复制账号</button>
+            <button class="copy-button" data-clipboard-action="copy" data-clipboard-target=".rocketPassword">复制密码</button>
         </div>
 
         <div class="account">
             <h2>账号2</h2>
-            <p>小火箭账号：<span class="rocketUsername">Account 2 Username</span></p>
-            <p>小火箭密码：<span class "rocketPassword">Account 2 Password</span></p>
-            <button class="copy-button" onclick="copyToClipboard('account2', 'username')">复制账号</button>
-            <button class="copy-button" onclick="copyToClipboard('account2', 'password')">复制密码</button>
+            <p>小火箭账号：<span class="rocketUsername" data-clipboard-text="Account 2 Username">Account 2 Username</span></p>
+            <p>小火箭密码：<span class="rocketPassword" data-clipboard-text="Account 2 Password">Account 2 Password</span></p>
+            <button class="copy-button" data-clipboard-action="copy" data-clipboard-target=".rocketUsername[data-clipboard-text='Account 2 Username']">复制账号</button>
+            <button class="copy-button" data-clipboard-action="copy" data-clipboard-target=".rocketPassword[data-clipboard-text='Account 2 Password']">复制密码</button>
         </div>
     </div>
 
     <!-- Add more account sections as needed -->
 
+    <div id="alertDiv" style="display: none;"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
     <script>
-        function copyToClipboard(accountId, fieldType) {
-            var element = document.querySelector("." + accountId + " .rocket" + fieldType);
-            var textToCopy = element.textContent;
+        var clipboard = new ClipboardJS('.copy-button');
+
+        clipboard.on('success', function (e) {
+            var alertDiv = document.getElementById("alertDiv");
+            alertDiv.style.display = "block";
+            alertDiv.innerHTML = "已复制: " + e.text;
             
-            if (navigator.clipboard) {
-                navigator.clipboard.writeText(textToCopy)
-                    .then(function() {
-                        var alertDiv = document.createElement("div");
-                        alertDiv.innerHTML = "已复制：" + (fieldType === 'username' ? "账号" : "密码") + "：" + textToCopy;
-                        document.body.appendChild(alertDiv);
-                        // 关闭提示窗口
-                        setTimeout(function() {
-                            document.body.removeChild(alertDiv);
-                        }, 1000); // 1秒后关闭提示
-                    })
-                    .catch(function(err) {
-                        console.error('复制失败:', err);
-                    });
-            } else {
-                console.error('Clipboard API 不受支持。');
-            }
-        }
+            setTimeout(function() {
+                alertDiv.style.display = "none";
+            }, 1000); // 1秒后关闭提示
+        });
+
+        clipboard.on('error', function (e) {
+            console.error('复制失败:', e.action);
+        });
     </script>
 </body>
 </html>
