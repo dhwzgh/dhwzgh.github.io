@@ -21,6 +21,17 @@
         h1 {
             text-align: center;
         }
+        .copy-success {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            color: color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -29,16 +40,16 @@
     <div class="account-container">
         <div class="account">
             <h2>账号1</h2>
-            <p>小火箭账号：<span class="rocketUsername" data-clipboard-text="Account 1 Username">Account 1 Username</span></p>
-            <p>小火箭密码：<span class="rocketPassword" data-clipboard-text="Account 1 Password">Account 1 Password</span></p>
+            <p>小火箭账号：<span class="rocketUsername" data-clipboard-text="Account 1 Username">askndrruutmau@hotmail.com</span></p>
+            <p>小火箭密码：<span class="rocketPassword" data-clipboard-text="Account 1 Password">Zd112266</span></p>
             <button class="copy-button" data-clipboard-action="copy" data-clipboard-target=".rocketUsername">复制账号</button>
             <button class="copy-button" data-clipboard-action="copy" data-clipboard-target=".rocketPassword">复制密码</button>
         </div>
 
         <div class="account">
             <h2>账号2</h2>
-            <p>小火箭账号：<span class="rocketUsername" data-clipboard-text="Account 2 Username">Account 2 Username</span></p>
-            <p>小火箭密码：<span class="rocketPassword" data-clipboard-text="Account 2 Password">Account 2 Password</span></p>
+            <p>小火箭账号：<span class="rocketUsername" data-clipboard-text="Account 2 Username">savatehayeq@hotmail.com</span></p>
+            <p>小火箭密码：<span class="rocketPassword" data-clipboard-text="Account 2 Password">fotionmazanan@hotmail.com</span></p>
             <button class="copy-button" data-clipboard-action="copy" data-clipboard-target=".rocketUsername[data-clipboard-text='Account 2 Username']">复制账号</button>
             <button class="copy-button" data-clipboard-action="copy" data-clipboard-target=".rocketPassword[data-clipboard-text='Account 2 Password']">复制密码</button>
         </div>
@@ -46,25 +57,36 @@
 
     <!-- Add more account sections as needed -->
 
-    <div id="alertDiv" style="display: none;"></div>
+    <div class="copy-success" id="copySuccess">复制成功</div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
     <script>
         var clipboard = new ClipboardJS('.copy-button');
 
         clipboard.on('success', function (e) {
-            var alertDiv = document.getElementById("alertDiv");
-            alertDiv.style.display = "block";
-            alertDiv.innerHTML = "已复制: " + e.text;
-            
+            var copySuccess = document.getElementById("copySuccess");
+            copySuccess.style.display = "block";
+
             setTimeout(function() {
-                alertDiv.style.display = "none";
-            }, 1000); // 1秒后关闭提示
+                copySuccess.style.display = "none";
+            }, 500); // 0.5秒后关闭提示
         });
 
         clipboard.on('error', function (e) {
             console.error('复制失败:', e.action);
         });
     </script>
+    	<style>
+	.red-text {
+ 	color: red; font-size: 3em;
+	}
+	</style>
+	</head>
+	<body>
+	<p class="red-text">注：不看不要登录账号</p>
+      </body>
+    <p>1.该账号只能在APP store里登录，不要在设置里登录。</p>
+    <p>2.登录账号时会出现两个选择，你需要选 “其他选项”   “不升级”  </p>
+    <p>3.如果出现无法登录的现象，你要不等更新新账号，要不购买个人的账号</p>
 </body>
 </html>
