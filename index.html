@@ -189,17 +189,20 @@
 </div>
 
 <style>
-    #background {
-        display: block; /* 在小屏幕设备上显示背景图片 */
-        position: fixed;
-        z-index: -2;
-        background-image: url('https://dhwzgh.github.io/sjbizhi/1.JPG');
-        background-size: contain; /* 设置为 contain 以确保完整显示图片 */
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
+    /* 获取用户代理信息检测是否为移动设备 */
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        // 如果是移动设备，设置背景图片为壁纸 B
+        var backgroundImage = document.getElementById('background');
+        backgroundImage.style.backgroundImage = 'url("https://dhwzgh.github.io/sjbizhi/1.JPG")';
+        backgroundImage.style.backgroundSize = 'contain'; /* 设置为 contain 以确保完整显示图片 */
+        backgroundImage.style.backgroundRepeat = 'no-repeat';
+        backgroundImage.style.backgroundPosition = 'center';
+        backgroundImage.style.backgroundSize = 'cover';
     }
 </style>
+
 
 </body>
 </html>
