@@ -156,46 +156,49 @@
         display: none; /* 默认情况下不显示菜单图标 */
     }
 
-    /* 根据屏幕宽度来设置手机端的样式 */
-    @media (max-width: 768px) {
-        .menu-icon {
-            display: block; /* 在小屏幕设备上显示菜单图标 */
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            cursor: pointer;
-            z-index: 999;
-            background-color: rgba(255, 255, 255, 0.01);
-            padding: 10px;
-            border: 1px solid rgba(0, 0, 0, 0.4);
-            border-radius: 5px;
-            backdrop-filter: blur(10px);
-        }
-
-        .menu-icon div {
-            width: 30px;
-            height: 3px;
-            background-color: black;
-            margin: 3px 0;
-        }
+   /* 根据屏幕宽度来设置手机端的样式 */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block; /* 在小屏幕设备上显示菜单图标 */
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        cursor: pointer;
+        z-index: 999;
+        background-color: rgba(255, 255, 255, 0.01);
+        padding: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+        backdrop-filter: blur(10px);
     }
-</style>
-    
+
+    .menu-icon div {
+        width: 30px;
+        height: 3px;
+        background-color: black;
+        margin: 3px 0;
+    }
+
 <div class="menu-icon" onclick="toggleSubLabels('label1')">
     <div></div>
     <div></div>
     <div></div>
 </div>
-    
-<script>
-    // 获取用户代理信息检测是否为移动设备
-    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-    if (isMobile) {
-        // 如果是移动设备，设置背景图片为壁纸 B
-        var backgroundImage = document.getElementById('background');
-        backgroundImage.style.backgroundImage = 'url("https://dhwzgh.github.io/sjbizhi/1.JPG")';
+    #background {
+        display: block; /* 在小屏幕设备上显示背景图片 */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-image: url('https://dhwzgh.github.io/sjbizhi/1.jps');
+        background-size: contain; /* 设置为 contain 以确保完整显示图片 */
+        background-repeat: no-repeat;
+        background-position: center;
     }
+}
 </script>
 
 </body>
