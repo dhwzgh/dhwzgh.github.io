@@ -156,35 +156,39 @@
         display: none; /* 默认情况下不显示菜单图标 */
     }
 
-   /* 根据屏幕宽度来设置手机端的样式 */
-@media (max-width: 768px) {
-    .menu-icon {
-        display: block; /* 在小屏幕设备上显示菜单图标 */
-        position: fixed;
-        bottom: 10px;
-        right: 10px;
-        cursor: pointer;
-        z-index: 999;
-        background-color: rgba(255, 255, 255, 0.01);
-        padding: 10px;
-        border: 1px solid rgba(0, 0, 0, 0.4);
-        border-radius: 5px;
-        backdrop-filter: blur(10px);
-    }
+    /* 根据屏幕宽度来设置手机端的样式 */
+    @media (max-width: 768px) {
+        .menu-icon {
+            display: block; /* 在小屏幕设备上显示菜单图标 */
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            cursor: pointer;
+            z-index: 999;
+            background-color: rgba(255, 255, 255, 0.01);
+            padding: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.4);
+            border-radius: 5px;
+            backdrop-filter: blur(10px);
+        }
 
-    .menu-icon div {
-        width: 30px;
-        height: 3px;
-        background-color: black;
-        margin: 3px 0;
+        .menu-icon div {
+            width: 30px;
+            height: 3px;
+            background-color: black;
+            margin: 3px 0;
+        }
     }
+</style>
 
+<!-- 将菜单图标放置在样式块之外 -->
 <div class="menu-icon" onclick="toggleSubLabels('label1')">
     <div></div>
     <div></div>
     <div></div>
 </div>
 
+<style>
     #background {
         display: block; /* 在小屏幕设备上显示背景图片 */
         position: fixed;
@@ -198,8 +202,7 @@
         background-repeat: no-repeat;
         background-position: center;
     }
-}
-</script>
+</style>
 
 </body>
 </html>
