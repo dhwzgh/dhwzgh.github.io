@@ -9,26 +9,41 @@
 <body>
   <h1>复制链接或者“对应软件”扫码</h1>
    <p>每次使用节点前，请使用本地网络更新一下节点，不然可能会导致无法使用</p>
-  <h2>小火箭节点</h1>
-  <p>链接：https://cf1.zhoumo.eu.org/custom/clash/mingzi/shij/cffd/cffdsr08.yaml</p>
+  <h2 style="color: red;">小火箭节点01</h2>
+  <p>订阅链接：https://dlj.cfdnsjd.cloudns.org/cfsr01</p>
   <div id="qrcodeTable"></div>
-  <h2>小火箭,电脑和安卓端clash</h1>
-  <p>https://cf1.zhoumo.eu.org/custom/clash/sr/fassh.yaml</p>
+  <h2>小火箭节点02</h1>
+  <p>订阅链接：https://cf1.zhoumo.eu.org/custom/clash/mingzi/shij/cffd/cffdsr08.yaml</p>
+  <div id="qrcodeTable2"></div>
+  <h2 style="color: red;">电脑端clash verge节点01</h2>
+  <p>订阅链接：https://dlj.cfdnsjd.cloudns.org/cfsr01</p>
+  <p>安装链接：https://xbc001.lanzn.com/b03lm3d9c</p> 
+  <p>验证码：dnrj</p> 
   <div id="qrcodeCanvas"></div>
-  <h2>小火箭,电脑和安卓端v2ray</h1>
-  <p>https://oss.v2rayse.com/custom/clash/mingzi/shij/cf/cffdip09.yaml</p>
+  <h2 style="color: red;">小火箭,电脑和安卓端v2ray节点01</h2>
+  <p>订阅链接：https://oss.v2rayse.com/custom/clash/mingzi/shij/cf/cffdip09.yaml</p>
   <div id="qrcodeCanvas2"></div>
+  <h2 style="color: red;">小火箭,电脑和安卓端v2ray节点02</h2>
+  <p>订阅链接：https://dlj.cfdnsjd.cloudns.org/cfsr01</p>
+  <div id="qrcodeCanvas3"></div>
 
   <script>
     jQuery('#qrcodeTable').qrcode({
       render	: "table",
-      text	: "https://cf1.zhoumo.eu.org/custom/clash/mingzi/shij/cffd/cffdsr08.yaml"
+      text	: "https://dlj.cfdnsjd.cloudns.org/cfsr01"
     });	
+    jQuery('#qrcodeTable2').qrcode({
+      render	: "table",
+      text	: "https://cf1.zhoumo.eu.org/custom/clash/mingzi/shij/cffd/cffdsr08.yaml"
+    });	  
     jQuery('#qrcodeCanvas').qrcode({
-      text	: "https://cf1.zhoumo.eu.org/custom/clash/sr/fassh.yaml"
+      text	: "https://dlj.cfdnsjd.cloudns.org/cfsr01"
     });
     jQuery('#qrcodeCanvas2').qrcode({
       text	: "https://oss.v2rayse.com/custom/clash/mingzi/shij/cf/cffdip09.yaml"
+    });
+    jQuery('#qrcodeCanvas3').qrcode({
+      text	: "https://dlj.cfdnsjd.cloudns.org/cfsr01"
     });
   </script>
 </body>
