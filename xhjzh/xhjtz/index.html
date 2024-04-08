@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>小火箭共享</title>
+  <meta charset="utf-8">
+    <script>
+        function checkPassword() {
+            var password = prompt("请输入密码");
+            if (password !== "xhj") {
+                alert("百度里啥都有");
+                window.location.href = "https://wwww.baidu.com"; // 输入错误时跳转到网站A
+            } else {
+                window.location.href = "https://dhwzgh.github.io/xhjzh/xhjtz/xhjzhhj/index.html"; // 输入正确时跳转到网站B
+            }
+        }
+    </script>
+</head>
+<body onload="checkPassword()">
+    <!-- 这里是你的网站内容 -->
+</body>
+</html>
