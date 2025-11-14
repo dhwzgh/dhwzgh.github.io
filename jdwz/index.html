@@ -3,76 +3,77 @@
 <head>
   <title>节点</title>
   <meta charset="utf-8">
-  <script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
-  <script src="https://cdn.staticfile.org/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-</head>
-<body>
-  <h1>复制链接或者“对应软件”扫码</h1>
-   <p style="color: red;">注意：每次使用节点前，请关闭代理软件，使用本地网络更新一下节点，不然可能会导致无法使用</p>
-   <p style="color: red;">注意：每次使用节点前，请关闭代理软件，使用本地网络更新一下节点，不然可能会导致无法使用</p>
-   <p style="color: red;">注意：每次使用节点前，请关闭代理软件，使用本地网络更新一下节点，不然可能会导致无法使用</p>
 
-<a href="https://alist.121810.xyz/微软云/科学软件" target="_blank" style="text-decoration: none;">
+  <!-- 使用新版 CDN（兼容 PC Chrome） -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery.qrcode/jquery.qrcode.min.js"></script>
+
+  <style>
+    body { font-family: Arial; }
+    h2 { margin-top: 30px; }
+    .qr-box { margin: 15px 0; }
+  </style>
+</head>
+
+<body>
+
+  <h1>复制链接或者“对应软件”扫码</h1>
+  <p style="color: red;">注意：每次使用节点前，请关闭代理软件，使用本地网络更新一下节点，不然可能会导致无法使用</p>
+  <p style="color: red;">注意：每次使用节点前，请关闭代理软件，使用本地网络更新一下节点，不然可能会导致无法使用</p>
+  <p style="color: red;">注意：每次使用节点前，请关闭代理软件，使用本地网络更新一下节点，不然可能会导致无法使用</p>
+
+  <a href="https://alist.121810.xyz/微软云/科学软件" target="_blank" style="text-decoration: none;">
     <h2 style="display: inline; color: red; margin: 0;">软件合集：</h2>
     <h2 style="display: inline; color: yellow; margin: 0;">https://alist.121810.xyz/微软云/科学软件</h2>
-</a>
+  </a>
 
-  <h2 style="color: red;">解锁GPT </h2>
+  <h2 style="color: red;">解锁GPT</h2>
   <p>订阅链接：https://vjsub.aadd.cloudns.ch/sub?host=ybvlgv.121810.xyz&uuid=3a037855-1f8f-4f7d-8917-60698f9556ff</p>
-  <div id="qrcodeCanvasgpt"></div>
+  <div id="qrcodeCanvasgpt" class="qr-box"></div>
 
-  <h2 style="color: red;">解锁GPT（不保证一定能用） </h2>
+  <h2 style="color: red;">解锁GPT（不保证一定能用）</h2>
   <p>订阅链接：https://xbvljdpages01.121810.xyz/eb814fd9-1f9d-4ba1-ae37-e0e9fd2792e5?sub=vjsub.aadd.cloudns.ch</p>
-  <div id="qrcodeCanvasgpt02"></div>  
-  
+  <div id="qrcodeCanvasgpt02" class="qr-box"></div>
+
   <h2 style="color: red;">全设备通用节点A1</h2>
   <p>订阅链接：https://vjsub.aadd.cloudns.ch/sub?password=cttjjda1&security=tls&sni=tja1.tjddd.cloudns.ch&fp=randomized&type=ws&host=tja1.tjddd.cloudns.ch&path=%2F%3Fed%3D2560</p>
-  <div id="qrcodeCanvas1"></div>
-  
+  <div id="qrcodeCanvas1" class="qr-box"></div>
+
   <h2 style="color: red;">全设备通用节点A2</h2>
   <p>订阅链接：https://tja2.121810.xyz/cttjjda2</p>
-  <div id="qrcodeCanvas2"></div>
+  <div id="qrcodeCanvas2" class="qr-box"></div>
 
   <h2 style="color: red;">全设备通用-联通专属</h2>
   <p>订阅链接：https://tja3.lwdd.eu.org/cttjjda3</p>
-  <div id="qrcodeCanvas5"></div>
+  <div id="qrcodeCanvas5" class="qr-box"></div>
 
   <h2 style="color: red;">VLESS_A1</h2>
   <p>订阅链接：https://dyq-v2.fldd.eu.org/sub?token=aafacfdfeb2c7ed492f0c0eddaa881a7</p>
   <p>不支持没有mate内核的clash</p>
-  <div id="qrcodeCanvas3"></div>
+  <div id="qrcodeCanvas3" class="qr-box"></div>
 
   <h2 style="color: red;">VLESS_A2</h2>
   <p>订阅链接：https://vldy.cfdnsjd.cloudns.org/sub?host=pagesproxyuk02jd.dddd.cloudns.ch&uuid=cd7f1e19-50fc-4428-9d7d-1cbb6209e992</p>
   <p>不支持没有mate内核的clash</p>
-  <div id="qrcodeCanvas4"></div>
+  <div id="qrcodeCanvas4" class="qr-box"></div>
 
   <script>
-    jQuery('#qrcodeCanvasgpt').qrcode({
-      render	: "table",
-      text	: "https://vjsub.aadd.cloudns.ch/sub?host=ybvlgv.121810.xyz&uuid=3a037855-1f8f-4f7d-8917-60698f9556ff"
-    });
-    jQuery('#qrcodeCanvasgpt02').qrcode({
-      render	: "table",
-      text	: "https://xbvljdpages01.121810.xyz/eb814fd9-1f9d-4ba1-ae37-e0e9fd2792e5?sub=vjsub.aadd.cloudns.ch"
-    });	 
-    jQuery('#qrcodeCanvas1').qrcode({
-      render	: "table",
-      text	: "https://vjsub.aadd.cloudns.ch/sub?password=cttjjda1&security=tls&sni=tja1.tjddd.cloudns.ch&fp=randomized&type=ws&host=tja1.tjddd.cloudns.ch&path=%2F%3Fed%3D2560"
-    });	
-    jQuery('#qrcodeCanvas2').qrcode({
-      render	: "table",
-      text	: "https://tja2.121810.xyz/cttjjda2"
-    });
-    jQuery('#qrcodeCanvas5').qrcode({
-      text	: "https://tja3.lwdd.eu.org/cttjjda3"
-    });      
-    jQuery('#qrcodeCanvas3').qrcode({
-      text	: "https://dyq-v2.fldd.eu.org/sub?token=aafacfdfeb2c7ed492f0c0eddaa881a7"
-    });
-    jQuery('#qrcodeCanvas4').qrcode({
-      text	: "https://vldy.cfdnsjd.cloudns.org/sub?host=pagesproxyuk02jd.dddd.cloudns.ch&uuid=cd7f1e19-50fc-4428-9d7d-1cbb6209e992"
-    });  
+    function makeQR(id, text) {
+      $(id).qrcode({
+        width: 180,
+        height: 180,
+        text: text
+      });
+    }
+
+    makeQR("#qrcodeCanvasgpt", "https://vjsub.aadd.cloudns.ch/sub?host=ybvlgv.121810.xyz&uuid=3a037855-1f8f-4f7d-8917-60698f9556ff");
+    makeQR("#qrcodeCanvasgpt02", "https://xbvljdpages01.121810.xyz/eb814fd9-1f9d-4ba1-ae37-e0e9fd2792e5?sub=vjsub.aadd.cloudns.ch");
+    makeQR("#qrcodeCanvas1", "https://vjsub.aadd.cloudns.ch/sub?password=cttjjda1&security=tls&sni=tja1.tjddd.cloudns.ch&fp=randomized&type=ws&host=tja1.tjddd.cloudns.ch&path=%2F%3Fed%3D2560");
+    makeQR("#qrcodeCanvas2", "https://tja2.121810.xyz/cttjjda2");
+    makeQR("#qrcodeCanvas5", "https://tja3.lwdd.eu.org/cttjjda3");
+    makeQR("#qrcodeCanvas3", "https://dyq-v2.fldd.eu.org/sub?token=aafacfdfeb2c7ed492f0c0eddaa881a7");
+    makeQR("#qrcodeCanvas4", "https://vldy.cfdnsjd.cloudns.org/sub?host=pagesproxyuk02jd.dddd.cloudns.ch&uuid=cd7f1e19-50fc-4428-9d7d-1cbb6209e992");
   </script>
+
 </body>
 </html>
